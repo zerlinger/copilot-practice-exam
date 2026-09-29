@@ -1,4 +1,4 @@
-# Copilot practice exam
+# GH-300 Practice Exam
 
 Open `index.html` in any modern browser. No installation, server, or internet connection is needed. Keep all files in this folder together.
 
