@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copilot Practice Exam</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="questions.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+<main>
+  <header><span class="eyebrow">YOUR STUDY SPACE</span><h1>Copilot practice exam</h1><p>One question at a time. Build confidence with every answer.</p></header>
+  <section id="setup" class="card">
+    <h2>Ready when you are.</h2><p>300 questions from your three practice tests. Your score updates after every answer.</p>
+    <label for="order">Question order</label>
+    <select id="order"><option value="forward">From the beginning · 1 → 300</option><option value="reverse">From the end · 300 → 1</option><option value="random">Randomized · all 300, no repeats</option></select>
+    <label class="check"><input type="checkbox" id="auto" checked> Automatically advance after feedback (4 seconds)</label>
+    <button id="start">Start exam</button>
+    <p class="note">Graded using the answer keys in your files. For questions with multiple answers, select all requested choices and submit.</p>
+  </section>
+  <section id="exam" hidden>
+    <div class="stats"><span id="position"></span><strong id="score"></strong></div>
+    <progress id="progress" value="0" max="300" aria-label="Questions answered"></progress>
+    <div class="card">
+      <span id="source" class="eyebrow"></span><h2 id="question" tabindex="-1"></h2>
+      <p id="hint"></p><form id="answer-form"><fieldset id="options"><legend class="sr-only">Answer choices</legend></fieldset><button id="submit" type="submit" hidden>Submit answer</button></form>
+      <div id="feedback" role="status" aria-live="polite" hidden></div>
+      <div class="actions"><button id="next" hidden>Next question</button><button id="pause" class="secondary" hidden>Pause auto-advance</button></div>
+    </div>
+    <button id="restart" class="secondary">Start a new exam</button>
+  </section>
+  <section id="results" class="card" hidden><span class="eyebrow">EXAM COMPLETE</span><h2 id="result-title" tabindex="-1"></h2><p id="result-text"></p><button id="again">Choose another order</button><details id="review"><summary>Review missed questions</summary><div id="missed"></div></details></section>
+  <footer>Practice at your own pace. Scores apply to the current exam.</footer>
+</main>
+</body>
+</html>
